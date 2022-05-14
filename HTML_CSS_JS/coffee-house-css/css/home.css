@@ -1,0 +1,31 @@
+img {
+    width: 100%;
+}
+
+#home {
+    width: 100%;
+}
+
+.home__img {
+    width: 100%;
+}
+
+.home__text {
+    position: absolute;
+    left: 530px;
+    top: 540px;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.line {
+    position: absolute;
+    left: 670px;
+    top: 630px;
+    width: 80px;
+    height: 10px;
+    background: #817070;
+}
