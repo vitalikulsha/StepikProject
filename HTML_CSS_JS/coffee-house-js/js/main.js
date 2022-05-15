@@ -40,7 +40,7 @@ function calculatePurchaseAmount() {
     total = 0;
     for (numKey in countGoods) {
         for (priceKey in choicePriceGoods) {
-            if (numKey == priceKey && countGoods[numKey] != 0) {
+            if (numKey == priceKey && countGoods[numKey] > 0) {
                 total = total + countGoods[numKey] * choicePriceGoods[priceKey];
             }
         }
@@ -48,6 +48,7 @@ function calculatePurchaseAmount() {
     return total;
 }
 
+//изменение количество продуктов
 function changeNumberProducts(id, num) {
     countElements.forEach(element => {
         if (element.id == id) {
@@ -57,10 +58,20 @@ function changeNumberProducts(id, num) {
     });
 }
 
+//проверка на положительное целое число
+function validationNumber(num) {
+    if (Math.sign(num) == 1 && Number.isInteger(num)) {
+        return num;
+    } else {
+        return 0;
+    }
+}
+
 //для каждого элемента input с кол-вом нужно повесить событие на изменение change, 
 //по которому в объекте должны меняться значения на значение в input
 countElements.forEach(elem => {
     elem.addEventListener("change", function () {
+        changeNumberProducts(elem.id, validationNumber(parseInt(elem.value)));
         countGoods[elem.id] = parseInt(elem.value);
         resultElem.textContent = calculatePurchaseAmount();
     });
