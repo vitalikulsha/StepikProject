@@ -67,6 +67,19 @@ function validationNumber(num) {
     }
 }
 
+//возвращает список заказа
+function getOrder() {
+    let order = [];
+    for (numKey in countGoods) {
+        for (priceKey in choicePriceGoods) {
+            if (numKey == priceKey && countGoods[numKey] > 0) {
+                order.push(`${numKey} - ${countGoods[numKey]} шт.`);
+            }
+        }
+    }
+    return order;
+}
+
 //для каждого элемента input с кол-вом нужно повесить событие на изменение change, 
 //по которому в объекте должны меняться значения на значение в input
 countElements.forEach(elem => {
@@ -97,7 +110,21 @@ goodsElements.forEach(product => {
 //(*)для выбравших способ 1 или 2 именно внутри данного события будет происходить подсчет итоговой суммы,
 //вам нужно перебрать все элементы checkbox и input в цикле
 btn.addEventListener("click", function () {
-    total = calculatePurchaseAmount();
-    alert(`Закзчик: ${userSurname.value} ${userName.value}\nИтого: ${total} р.`);
+    /*     let order = [];
+        for (numKey in countGoods) {
+            for (priceKey in choicePriceGoods) {
+                if (numKey == priceKey && countGoods[numKey] > 0) {
+                    order.push(`${numKey.textContent.padEnd(10,'.')}${countGoods[numKey]}`);
+                }
+            }
+        } */
+
+    if (userName.value && userSurname.value) {
+        total = calculatePurchaseAmount();
+        alert(`Заказчик: ${userSurname.value} ${userName.value}\n\n${getOrder().join('\n')}\n\nИтого: ${total} р.`);
+    }
+    else {
+        alert('Вы не ввели данные заказчика!');
+    }
 });
 
