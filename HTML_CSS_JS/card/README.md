@@ -1,5 +1,7 @@
 <h1 align="center">Задание Card</h1>
 
+### Решение: [сайт](https://stellular-bubblegum-1e904a.netlify.app/)
+
 Вам нужно сверстать карточку для сайта из [макета](https://www.figma.com/file/IIf4XPgZlWiY29cjsO4Knk/Cards-for-course?node-id=1%3A2) 
 
 [ссылка на макет psd (яндекс.диск)](https://yadi.sk/i/aNr6XZs4us0GUw)
