@@ -35,6 +35,17 @@ const choicePriceGoods = {
     "apple_tart": 0
 }
 
+//храняться название товаров
+const nameGoods = {
+    "expresso": "Эспрессо",
+    "americano": "Американо",
+    "latte": "Латте",
+    "capuchino": "Капучино",
+    "chocolate_muffin": "Шоколадный кекс",
+    "blueberry_muffin": "Черничный кекс",
+    "apple_tart": "Яблочный тарт"
+}
+
 //создайте функцию, которая будет считать итоговую сумму, подумайте над формулой.
 function calculatePurchaseAmount() {
     total = 0;
@@ -73,7 +84,7 @@ function getOrder() {
     for (numKey in countGoods) {
         for (priceKey in choicePriceGoods) {
             if (numKey == priceKey && countGoods[numKey] > 0) {
-                order.push(`${numKey} - ${countGoods[numKey]} шт.`);
+                order.push(`${nameGoods[numKey]} - ${countGoods[numKey]} шт.`);
             }
         }
     }
