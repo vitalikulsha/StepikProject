@@ -1,5 +1,7 @@
 <h1 align="center">Задание Footer</h1>
 
+### Решение: [сайт](https://lucent-peony-4193c8.netlify.app/)
+
 Вам нужно сверстать footer сайта из [макета](https://www.figma.com/file/102b19H2eHKy8qTdEGgIaJ/Footer-for-course?node-id=0%3A1) 
 
 [ссылка на макет psd (яндекс.диск)](https://yadi.sk/i/fjdsofaT1VHebA)
