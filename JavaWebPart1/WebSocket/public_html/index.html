@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Jetty WebSocket Chat</title>
+    <script type="text/javascript">
+        let ws;
+
+        function init() {
+            ws = new WebSocket("ws://localhost:8080/chat");
+            ws.onopen = function (event) {
+
+            }
+            ws.onmessage = function (event) {
+                const $textarea = document.getElementById("messages");
+                $textarea.value = $textarea.value + event.data + "\n";
+            }
+            ws.onclose = function (event) {
+
+            }
+        }
+
+        function sendMessage() {
+            const messageField = document.getElementById("message");
+            const userNameField = document.getElementById("username");
+            const message = userNameField.value + ":" + messageField.value;
+            ws.send(message);
+            messageField.value = '';
+        }
+    </script>
+</head>
+<body onload="init();">
+<div id="body">
+    <div id="menu">
+        <p class="welcome">
+            <label for="username">Welcome, </label>
+            <input id="username" value="anonymous"/>
+        </p>
+        <div style="clear: both"></div>
+    </div>
+
+    <div id="chatbox">
+        <label for="messages">Chating history:<br></label>
+        <textarea id="messages" rows="20" cols="50" readonly="readonly"></textarea>
+    </div>
+
+    <form name="message" action="">
+        <label for="message">Message</label>
+        <input name="usermsg" type="text" id="message" size="40"/>
+        <input type="button" name="submitmsg" value="Send..." onclick="sendMessage();"/>
+    </form>
+</div>
+</body>
+</html>
