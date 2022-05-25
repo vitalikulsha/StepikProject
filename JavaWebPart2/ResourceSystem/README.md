@@ -1,6 +1,6 @@
 <h1 align="center">Задание</h1>
 
-Cкачайте тестируюущее приложение (HW02) [по ссылке](https://stepik.org/media/attachments/lesson/13016/HW06.zip).
+Cкачайте тестируюущее приложение (HW06) [по ссылке](https://stepik.org/media/attachments/lesson/13016/HW06.zip).
 
 #### Задача:
 Добавить в сервер класс `resources.TestResource`
